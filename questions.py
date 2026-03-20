@@ -42,7 +42,9 @@ while attempts > 0:
 
     letter = input("Ingresá una letra: ")
 
-    if letter in guessed:
+    if len(letter) != 1 or not letter.isalpha():
+        print('Entrada no valida')
+    elif letter in guessed:
         print("Ya usaste esa letra.")
     elif letter in word:
         guessed.append(letter)
@@ -56,3 +58,4 @@ while attempts > 0:
 
 else:
         print(f"¡Perdiste! La palabra era: {word}")
+
